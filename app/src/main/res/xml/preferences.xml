@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Display">
+
+        <com.rarepebble.colorpicker.ColorPreference
+                        android:key="clockColour"
+                        android:title="Clock Colour"
+                        android:defaultValue="#ffffff"/>
+
+        <com.rarepebble.colorpicker.ColorPreference
+                        android:key="dateColour"
+                        android:title="Date Colour"
+                        android:defaultValue="#ffffff"/>
+
+        <com.rarepebble.colorpicker.ColorPreference
+                        android:key="iconColour"
+                        android:title="Icon Colour"
+                        android:defaultValue="#ffffff"/>
+
+        <com.rarepebble.colorpicker.ColorPreference
+                        android:key="previewColour"
+                        android:title="Notification Preview Colour"
+                        android:defaultValue="#ffffff"/>
+
+        <CheckBoxPreference android:title="Use Preview Icon Colour"
+                            android:defaultValue="true"
+                            android:summary="Use the Notifications Preview colour for the preview icon, or set to false to use the Icon Colour separately"
+                            android:key="iconColourSame" />
+
+        <EditTextPreference android:key="clockSize"
+                            android:title="Clock size"
+                            android:defaultValue="48"
+                            android:summary="Set the size of the clock"
+                            android:numeric="integer"
+                            android:maxLength="3"
+                            android:selectAllOnFocus="true"/>
+
+        <EditTextPreference android:key="dateSize"
+                            android:title="Date size"
+                            android:defaultValue="12"
+                            android:summary="Set the size of the Date"
+                            android:numeric="integer"
+                            android:maxLength="2"
+                            android:selectAllOnFocus="true"/>
+
+        <me.thomasdotters.activedisplay.Views.SeekBarPreference
+                            android:defaultValue="100"
+                            android:dialogMessage=""
+                            android:key="animationLength"
+                            android:max="500"
+                            android:summary="Length of the Animations. Set to 0 for instant"
+                            android:text="ms"
+                            android:title="Animation Length"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Notifications">
+
+        <ListPreference     android:title="Privacy Level"
+                            android:summary="Select the content to display from Notifications"
+                            android:key="notificationPrivacy"
+                            android:defaultValue="1"
+                            android:entries="@array/notificationPrivacyList"
+                            android:entryValues="@array/notificationPrivacyValues" />
+
+        <CheckBoxPreference android:title="Show Notification Image"
+                            android:defaultValue="true"
+                            android:summary="Toggle the displaying of an image from the notification."
+                            android:key="notificationImageShow" />
+
+        <CheckBoxPreference android:title="Vibrate on Touch"
+                            android:defaultValue="true"
+                            android:summary="This option if selected will cause the device to vibrate when a notification is touched."
+                            android:key="notificationVibrateTouch" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
